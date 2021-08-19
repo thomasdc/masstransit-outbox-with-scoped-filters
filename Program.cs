@@ -29,6 +29,7 @@ namespace MassTransitOutboxWithScopedFilter
                     {
                         cfg.UseConsumeFilter(typeof(SomeConsumeFilter<>), context);
                         cfg.UsePublishFilter(typeof(SomePublishFilter<>), context);
+                        cfg.UseMessageScope(context);
                         cfg.UseInMemoryOutbox();
                         cfg.ConfigureEndpoints(context);
                     });
